@@ -18,10 +18,17 @@ public class MarsRover {
         if (command.equals("L")) {
             rotateLeft();
         }
+        if (command.equals("E")) {
+            rotateRight();
+        }
     }
 
     private void rotateLeft() {
         direction = direction.previous();
+    }
+
+    private void rotateRight() {
+        direction = direction.next();
     }
 
     private void move() {
