@@ -3,12 +3,12 @@ package com.afs.tdd;
 public class MarsRover {
     private int locationX;
     private int locationY;
-    private String direction;
+    private DirectionEnum direction;
 
     public MarsRover(int locationX, int locationY, String direction) {
         this.locationX = locationX;
         this.locationY = locationY;
-        this.direction = direction;
+        this.direction = DirectionEnum.valueOf(direction);
     }
 
     public void executeCommand(String command) {
@@ -21,22 +21,20 @@ public class MarsRover {
     }
 
     private void rotateLeft() {
-        if (direction.equals("N")) {
-            direction = "W";
-        }
+        direction = direction.previous();
     }
 
     private void move() {
-        if (direction.equals("N")) {
+        if (direction == DirectionEnum.N) {
             locationY++;
         }
-        if (direction.equals("S")) {
+        if (direction == DirectionEnum.S) {
             locationY--;
         }
-        if (direction.equals("E")) {
+        if (direction == DirectionEnum.E) {
             locationX++;
         }
-        if (direction.equals("W")) {
+        if (direction == DirectionEnum.W) {
             locationX--;
         }
     }
@@ -49,7 +47,7 @@ public class MarsRover {
         return locationY;
     }
 
-    public String getDirection() {
-        return direction;
+    public String getDirectionString() {
+        return direction.toString();
     }
 }
