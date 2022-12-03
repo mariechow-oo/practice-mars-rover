@@ -11,6 +11,12 @@ public class MarsRover {
         this.direction = DirectionEnum.valueOf(direction);
     }
 
+    public void executeBatchCommand(String batchCommand) {
+        for (String command : batchCommand.split("")) {
+            executeCommand(command);
+        }
+    }
+
     public void executeCommand(String command) {
         if (command.equals("M")) {
             move();
