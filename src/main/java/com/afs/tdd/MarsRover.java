@@ -18,7 +18,7 @@ public class MarsRover {
         if (command.equals("L")) {
             rotateLeft();
         }
-        if (command.equals("E")) {
+        if (command.equals("R")) {
             rotateRight();
         }
     }
