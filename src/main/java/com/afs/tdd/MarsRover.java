@@ -18,14 +18,16 @@ public class MarsRover {
     }
 
     public void executeCommand(String command) {
-        if (command.equals("M")) {
-            move();
-        }
-        if (command.equals("L")) {
-            rotateLeft();
-        }
-        if (command.equals("R")) {
-            rotateRight();
+        switch (command) {
+            case "M":
+                move();
+                break;
+            case "L":
+                rotateLeft();
+                break;
+            case "R":
+                rotateRight();
+                break;
         }
     }
 
@@ -38,17 +40,19 @@ public class MarsRover {
     }
 
     private void move() {
-        if (direction == DirectionEnum.N) {
-            locationY++;
-        }
-        if (direction == DirectionEnum.S) {
-            locationY--;
-        }
-        if (direction == DirectionEnum.E) {
-            locationX++;
-        }
-        if (direction == DirectionEnum.W) {
-            locationX--;
+        switch (direction) {
+            case N:
+                locationY++;
+                break;
+            case E:
+                locationX++;
+                break;
+            case S:
+                locationY--;
+                break;
+            case W:
+                locationX--;
+                break;
         }
     }
 
